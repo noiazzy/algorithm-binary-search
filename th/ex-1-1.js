@@ -10,6 +10,21 @@
 */
 
 // Start coding here
+const findNumberIndex = (numbers,targetNumber) => {
+    let left = 0
+    let right = numbers.length - 1
+    for (let i = 0; i < numbers.length; i++) {
+        let mid = Math.floor((left + right) / 2)
+        if(numbers[mid] === targetNumber){
+            return mid
+        } else if (numbers[mid] < targetNumber){
+            left += 1
+        } else {
+            right -= 1
+        }
+    }
+    return -1
+}
 
 const sortedNumbers = [5, 12, 18, 23, 34, 45, 56, 67, 78, 89];
 console.log(findNumberIndex(sortedNumbers, 67)); // 7
